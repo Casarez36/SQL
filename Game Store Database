@@ -1,0 +1,26 @@
+--Create a store database
+
+CREATE TABLE games (id INTEGER PRIMARY KEY, name TEXT, genre TEXT, rating TEXT, price INTEGER);
+
+Insert Into games Values (1, "Metal Gear Solid", "Tactical Espionge", "M", 19.99);
+Insert Into games Values (2, "Bioshock", "Suspense", "T", 16.99);
+Insert Into games Values (3, "Halo", "Shooter", "M", 19.99);
+Insert Into games Values (4, "COD", "Shooter", "M", 24.99);
+Insert Into games Values (5, "Skyrim", "Adventure", "M", 19.99);
+Insert Into games Values (6, "Elden Ring", "Fantasy", "M", 22.99);
+Insert Into games Values (7, "GTA", "Role Play", "M", 19.99);
+Insert Into games Values (8, "Forza", "Racing", "T", 19.99);
+Insert Into games Values (9, "Mario", "Arcade", "E", 14.99);
+Insert Into games Values (10, "Madden", "Sports", "M", 12.99);
+
+--display the database ordered by price.
+SELECT * FROM games 
+Order By price desc;
+
+--what is the MAX price of games?
+SELECT Max(price) From games;
+
+--what are the 5 most expensive games?
+SELECT name, price
+From games
+Order By price desc;
