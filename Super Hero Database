@@ -50,10 +50,12 @@ Where strength >= 5 And intelligence >= 5
 ORDER BY name desc;
 
 --What about those numbers per category in the data (using HAVING)?
-SELECT name, intelligence, strength FROM marvels GROUP BY name HAVING intelligence > 3 AND strength > 3 ORDER BY strength Limit 5; 
+SELECT name FROM marvels GROUP BY name HAVING intelligence > 5 AND strength > 5 ORDER BY name; 
 
 --What are average, max, and min values in the data?
 SELECT AVG(intelligence) FROM marvels
+SELECT MIN(strength) FROM marvels
+SELECT MAX(height) FROM marvels
 
 --What ways are there to group the data values that don’t exist yet (using CASE)?
 SELECT name, gender, 
