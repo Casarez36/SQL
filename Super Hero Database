@@ -45,17 +45,23 @@ INSERT INTO marvels VALUES(26, "Professor X", 58, "Good", "Male", 1.83, 86, "EUA
 SELECT * FROM marvels;
 
 --What interesting ways are there to filter the data (using AND/OR)?
-SELECT name, intelligence, strength FROM marvels
-Where strength >= 5 And intelligence >= 5
+SELECT name, intelligence, strength 
+FROM marvels
+WHERE strength >= 5 And intelligence >= 5
 ORDER BY name desc;
 
 --What about those numbers per category in the data (using HAVING)?
-SELECT name FROM marvels GROUP BY name HAVING intelligence > 5 AND strength > 5 ORDER BY name; 
+SELECT name 
+FROM marvels 
+GROUP BY name HAVING intelligence > 5 AND strength > 5 ORDER BY name; 
 
 --What are average, max, and min values in the data?
-SELECT AVG(intelligence) FROM marvels
-SELECT MIN(strength) FROM marvels
-SELECT MAX(height) FROM marvels
+SELECT AVG(intelligence) 
+FROM marvels;
+SELECT MIN(strength) 
+FROM marvels;
+SELECT MAX(height) 
+FROM marvels;
 
 --What ways are there to group the data values that don’t exist yet (using CASE)?
 SELECT name, gender, 
@@ -63,4 +69,4 @@ SELECT name, gender,
             WHEN height_m > 1.80 THEN "tall"
             ELSE "short"
             END "height"
-FROM marvels ORDER BY gender Limit 10
+FROM marvels ORDER BY gender Limit 10;
